@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scents Loft – Exclusive Arabian Fragrances</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige: #c8b0a0;
+    --rose: #b8908a;
+    --cream: #f5f0ec;
+    --white: #ffffff;
+    --dark: #2c2420;
+    --gold: #c9a96e;
+    --light-beige: #e8ddd7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(245,240,236,0.95);
+    backdrop-filter: blur(10px);
+    padding: 18px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--light-beige);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-dots {
+    display: flex; gap: 5px;
+  }
+
+  .nav-logo-dots span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--rose);
+    display: block;
+  }
+
+  .nav-logo-text {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    font-size: 0.9rem;
+    color: var(--dark);
+    line-height: 1.1;
+  }
+
+  .nav-logo-text span {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--beige);
+  }
+
+  nav ul {
+    display: flex; gap: 36px; list-style: none;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  nav ul a:hover { color: var(--rose); }
+
+  .nav-cta {
+    background: var(--rose);
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 2px;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--beige) !important; color: white !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--beige) 100%);
+    z-index: 0;
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 1;
+    max-width: 520px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-desc {
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #6b5a52;
+    margin-bottom: 36px;
+    max-width: 420px;
+  }
+
+  .hero-actions {
+    display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--rose);
+    color: white;
+    padding: 14px 36px;
+    border: none; border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--beige); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    padding: 14px 36px;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { background: var(--dark); color: white; }
+
+  .hero-badge {
+    position: absolute; right: 6%; bottom: 12%;
+    background: white;
+    border-radius: 50%;
+    width: 130px; height: 130px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    z-index: 2;
+  }
+
+  .hero-badge .badge-title {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--beige);
+  }
+
+  .hero-badge .badge-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--dark);
+    font-weight: 500;
+  }
+
+  .hero-badge .badge-sub {
+    font-size: 0.58rem;
+    color: #999;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+
+  /* MARQUEE */
+  .marquee-section {
+    background: var(--dark);
+    padding: 14px 0;
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 60px;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-track span {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--beige);
+    font-weight: 300;
+  }
+
+  .marquee-track .dot {
+    color: var(--rose);
+    font-size: 1rem;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    background: white;
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    border-top: 1px solid var(--light-beige);
+    border-bottom: 1px solid var(--light-beige);
+  }
+
+  .strip-item {
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .strip-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .strip-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--dark);
+  }
+
+  .strip-item p {
+    font-size: 0.8rem;
+    color: #8a7a72;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+  }
+
+  /* COLLECTION */
+  #collection {
+    padding: 100px 5%;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.15;
+  }
+
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  /* FILTER TABS */
+  .filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 8px 24px;
+    border: 1px solid var(--light-beige);
+    background: white;
+    border-radius: 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--dark);
+    transition: all 0.25s;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--rose);
+    border-color: var(--rose);
+    color: white;
+  }
+
+  /* PRODUCT GRID */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+
+  .product-card.hidden { display: none; }
+
+  .product-img-wrap {
+    height: 260px;
+    background: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .product-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .product-card:hover .product-img-wrap img { transform: scale(1.05); }
+
+  .product-badge-tag {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--rose);
+    color: white;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-brand {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--beige);
+    margin-bottom: 6px;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--rose);
+  }
+
+  .product-price small {
+    font-size: 0.7rem;
+    color: #bbb;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    margin-left: 4px;
+  }
+
+  .add-btn {
+    width: 36px; height: 36px;
+    background: var(--cream);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.25s;
+    font-size: 1.2rem;
+    color: var(--dark);
+  }
+
+  .add-btn:hover { background: var(--rose); color: white; }
+
+  /* DELIVERY */
+  #delivery {
+    background: var(--dark);
+    color: white;
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .delivery-text .section-eyebrow { color: var(--beige); }
+
+  .delivery-text .section-title { color: white; }
+
+  .delivery-text p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-top: 20px;
+  }
+
+  .delivery-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .del-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 24px 20px;
+  }
+
+  .del-card .icon { font-size: 1.6rem; margin-bottom: 10px; }
+
+  .del-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .del-card p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    margin-top: 0 !important;
+  }
+
+  .del-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--rose);
+    margin-top: 10px;
+  }
+
+  /* ABOUT */
+  #about {
+    padding: 100px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-visual {
+    background: linear-gradient(135deg, var(--light-beige), var(--beige));
+    border-radius: 4px;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-visual::before {
+    content: '✦';
+    position: absolute;
+    font-size: 12rem;
+    color: rgba(255,255,255,0.15);
+    top: -20px;
+    right: -20px;
+    line-height: 1;
+  }
+
+  .about-visual-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .about-dots {
+    display: flex; gap: 8px;
+  }
+
+  .about-dots span {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .about-visual-name {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    font-size: 1.1rem;
+    color: white;
+    margin-top: 6px;
+  }
+
+  .about-visual-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .about-visual-address {
+    margin-top: 40px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+    padding: 20px;
+    font-size: 0.82rem;
+    color: white;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .about-text .section-title { text-align: left; }
+
+  .about-text p {
+    font-size: 0.9rem;
+    color: #6b5a52;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-top: 20px;
+  }
+
+  .about-social {
+    margin-top: 36px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--light-beige);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--dark);
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .social-pill:hover { background: var(--rose); color: white; border-color: var(--rose); }
+
+  /* ENQUIRY */
+  #enquiry {
+    background: var(--cream);
+    padding: 100px 5%;
+  }
+
+  .enquiry-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .enquiry-wrap .section-header { margin-bottom: 48px; }
+
+  .contact-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .contact-card {
+    background: white;
+    border: 1px solid var(--light-beige);
+    border-radius: 4px;
+    padding: 28px 24px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.3s;
+    display: block;
+  }
+
+  .contact-card:hover {
+    border-color: var(--rose);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .contact-card .c-icon { font-size: 2rem; margin-bottom: 12px; }
+
+  .contact-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .contact-card p {
+    font-size: 0.78rem;
+    color: #9a8880;
+    line-height: 1.5;
+  }
+
+  .contact-card .c-action {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 500;
+  }
+
+  /* CHAT BOX */
+  .chatbox {
+    background: white;
+    border: 1px solid var(--light-beige);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .chatbox-header {
+    background: var(--dark);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chat-avatar {
+    width: 36px; height: 36px;
+    background: var(--rose);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+
+  .chat-info h4 {
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .chat-info p {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .online-dot {
+    width: 8px; height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin-left: auto;
+    box-shadow: 0 0 6px #4ade80;
+  }
+
+  .chatbox-messages {
+    padding: 24px;
+    min-height: 180px;
+    background: #faf8f6;
+  }
+
+  .chat-bubble {
+    background: var(--dark);
+    color: white;
+    border-radius: 12px 12px 12px 2px;
+    padding: 12px 18px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    max-width: 80%;
+    display: inline-block;
+    font-weight: 300;
+  }
+
+  .chatbox-input {
+    display: flex;
+    border-top: 1px solid var(--light-beige);
+  }
+
+  .chatbox-input input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    outline: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    background: white;
+    color: var(--dark);
+  }
+
+  .chatbox-input input::placeholder { color: #bbb; }
+
+  .chat-send {
+    background: var(--rose);
+    border: none;
+    padding: 0 24px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.25s;
+  }
+
+  .chat-send:hover { background: var(--beige); }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 5% 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+  }
+
+  .footer-brand .brand-name {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    font-size: 1rem;
+    color: white;
+    margin-top: 12px;
+  }
+
+  .footer-brand .brand-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--beige);
+  }
+
+  .footer-brand p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-top: 16px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--beige);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+    font-weight: 300;
+    transition: color 0.25s;
+  }
+
+  .footer-col ul li a:hover { color: var(--rose); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+  }
+
+  .footer-bottom a {
+    color: var(--rose);
+    text-decoration: none;
+  }
+
+  /* WHATSAPP FAB */
+  .wa-fab {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    z-index: 999;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 58px; height: 58px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    transition: transform 0.25s, box-shadow 0.25s;
+    animation: pulse-wa 2.5s infinite;
+  }
+
+  .wa-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  }
+
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav ul { display: none; }
+    .hero::before { width: 100%; clip-path: none; opacity: 0.3; }
+    .about-strip { grid-template-columns: 1fr; }
+    #delivery { grid-template-columns: 1fr; gap: 50px; }
+    #about { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .contact-options { grid-template-columns: 1fr; }
+    .delivery-cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-dots">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-logo-text">
+      SCENTS
+      <span>LOFT</span>
+    </div>
+  </a>
+  <ul>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#delivery">Delivery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#enquiry" class="nav-cta">Enquire</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">✦ Portshepstone, KwaZulu-Natal</p>
+    <h1>Exclusive <em>Arabian</em><br>Fragrances</h1>
+    <p class="hero-desc">Authentic Dubai colognes and perfumes at accessible prices. Discover world-class scents from Zimaya, Lattafa, Afnan, Armaf and more — now delivered across South Africa.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn-primary">Shop Collection</a>
+      <a href="#enquiry" class="btn-outline">Enquire Now</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <span class="badge-title">Delivery</span>
+    <span class="badge-value">R100</span>
+    <span class="badge-sub">Nationwide<br>South Africa</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>Zimaya</span><span class="dot">✦</span>
+    <span>Lattafa</span><span class="dot">✦</span>
+    <span>Afnan</span><span class="dot">✦</span>
+    <span>Armaf</span><span class="dot">✦</span>
+    <span>Milestone</span><span class="dot">✦</span>
+    <span>Authentic Dubai Fragrances</span><span class="dot">✦</span>
+    <span>Nationwide Delivery</span><span class="dot">✦</span>
+    <span>Zimaya</span><span class="dot">✦</span>
+    <span>Lattafa</span><span class="dot">✦</span>
+    <span>Afnan</span><span class="dot">✦</span>
+    <span>Armaf</span><span class="dot">✦</span>
+    <span>Milestone</span><span class="dot">✦</span>
+    <span>Authentic Dubai Fragrances</span><span class="dot">✦</span>
+    <span>Nationwide Delivery</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="strip-item fade-up">
+    <div class="strip-icon">🌍</div>
+    <h3>Nationwide Delivery</h3>
+    <p>We ship to any address in South Africa for a flat rate of R100.</p>
+  </div>
+  <div class="strip-item fade-up">
+    <div class="strip-icon">✨</div>
+    <h3>100% Authentic</h3>
+    <p>Every bottle is genuine Arabian & Dubai fragrance — no imitations, ever.</p>
+  </div>
+  <div class="strip-item fade-up">
+    <div class="strip-icon">💬</div>
+    <h3>Personal Service</h3>
+    <p>Chat directly with us on WhatsApp for recommendations and orders.</p>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+<section id="collection">
+  <div class="section-header fade-up">
+    <p class="section-eyebrow">Our Fragrances</p>
+    <h2 class="section-title">The <em>Collection</em></h2>
+  </div>
+
+  <div class="filter-tabs fade-up">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="zimaya">Zimaya</button>
+    <button class="filter-btn" data-filter="lattafa">Lattafa</button>
+    <button class="filter-btn" data-filter="afnan">Afnan</button>
+    <button class="filter-btn" data-filter="milestone">Milestone</button>
+    <button class="filter-btn" data-filter="armaf">Armaf</button>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card fade-up" data-category="zimaya">
+      <div class="product-img-wrap">
+        <img src="Zimaya_Reserved_Oud.png" alt="Reserved Oud">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Zimaya</p>
+        <h3 class="product-name">Reserved Oud</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Reserved Oud by Zimaya')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="zimaya">
+      <div class="product-img-wrap">
+        <img src="Zimaya_Fatima_Pink.png" alt="Fatima Pink">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Zimaya</p>
+        <h3 class="product-name">Fatima Pink</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Fatima Pink by Zimaya')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="zimaya">
+      <div class="product-img-wrap">
+        <img src="Zimaya_Night_shadow.png" alt="Night Shadow">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Zimaya</p>
+        <h3 class="product-name">Night Shadow</h3>
+        <div class="product-footer">
+          <span class="product-price">R450</span>
+          <button class="add-btn" onclick="enquire('Night Shadow by Zimaya')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="zimaya">
+      <div class="product-img-wrap">
+        <img src="ZIMAYA_VELVET_LOVE.png" alt="Fatima Velvet Love">
+        <span class="product-badge-tag">Extrait</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Zimaya</p>
+        <h3 class="product-name">Fatima Velvet Love</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Fatima Velvet Love by Zimaya')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="zimaya">
+      <div class="product-img-wrap">
+        <img src="Zimaya_Amber_is_great.png" alt="Amber Is Great">
+        <span class="product-badge-tag">Extrait</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Zimaya</p>
+        <h3 class="product-name">Amber Is Great</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Amber Is Great by Zimaya')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="zimaya">
+      <div class="product-img-wrap">
+        <img src="Zimaya_Happy_Oud.png" alt="Happy Oud">
+        <span class="product-badge-tag">Extrait</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Zimaya</p>
+        <h3 class="product-name">Happy Oud</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Happy Oud by Zimaya')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="lattafa">
+      <div class="product-img-wrap">
+        <img src="Lattafa_YARA_CANDY.png" alt="Yara Candy">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Lattafa</p>
+        <h3 class="product-name">Yara Candy</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Yara Candy by Lattafa')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="lattafa">
+      <div class="product-img-wrap">
+        <img src="Lattafa_Velvet_Rose.png" alt="Velvet Rose">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Lattafa</p>
+        <h3 class="product-name">Velvet Rose</h3>
+        <div class="product-footer">
+          <span class="product-price">R500</span>
+          <button class="add-btn" onclick="enquire('Velvet Rose by Lattafa')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="lattafa">
+      <div class="product-img-wrap">
+        <img src="Lattafa_Ramz_Silver.png" alt="Ramz Silver">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Lattafa</p>
+        <h3 class="product-name">Ramz Silver</h3>
+        <div class="product-footer">
+          <span class="product-price">R550</span>
+          <button class="add-btn" onclick="enquire('Ramz Silver by Lattafa')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="lattafa">
+      <div class="product-img-wrap">
+        <img src="Lattafa_Nasheet.png" alt="Nasheet">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Lattafa</p>
+        <h3 class="product-name">Nasheet</h3>
+        <div class="product-footer">
+          <span class="product-price">R650</span>
+          <button class="add-btn" onclick="enquire('Nasheet by Lattafa')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="afnan">
+      <div class="product-img-wrap">
+        <img src="AFNAN_9PM_REBEL.png" alt="9PM Rebel">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Afnan</p>
+        <h3 class="product-name">9PM Rebel</h3>
+        <div class="product-footer">
+          <span class="product-price">R1200</span>
+          <button class="add-btn" onclick="enquire('9PM Rebel by Afnan')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="afnan">
+      <div class="product-img-wrap">
+        <img src="AFNAN_SUPREMACY_INCENSE.png" alt="Supremacy Incense">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Afnan</p>
+        <h3 class="product-name">Supremacy Incense</h3>
+        <div class="product-footer">
+          <span class="product-price">R1000</span>
+          <button class="add-btn" onclick="enquire('Supremacy Incense by Afnan')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="armaf">
+      <div class="product-img-wrap">
+        <img src="CLUB_DE_NUIT_BLUE_ICONIC.png" alt="Club de Nuit Blue Iconic">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Armaf</p>
+        <h3 class="product-name">Club de Nuit Blue Iconic</h3>
+        <div class="product-footer">
+          <span class="product-price">R1000</span>
+          <button class="add-btn" onclick="enquire('Club de Nuit Blue Iconic by Armaf')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="milestone">
+      <div class="product-img-wrap">
+        <img src="Milestone_ALL_YOURS.png" alt="AllYour's Homme Sport">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Milestone</p>
+        <h3 class="product-name">AllYour's Homme Sport</h3>
+        <div class="product-footer">
+          <span class="product-price">R350</span>
+          <button class="add-btn" onclick="enquire('AllYours Homme Sport by Milestone')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="milestone">
+      <div class="product-img-wrap">
+        <img src="Milestone_Mouj_Affection.png" alt="Mouj Jubilee XXVI">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Milestone</p>
+        <h3 class="product-name">Mouj Jubilee XXVI</h3>
+        <div class="product-footer">
+          <span class="product-price">R350</span>
+          <button class="add-btn" onclick="enquire('Mouj Jubilee XXVI by Milestone')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="milestone">
+      <div class="product-img-wrap">
+        <img src="Milestone_Body_Mist_blue.png" alt="My Favorite Blue Eclat Body Mist">
+        <span class="product-badge-tag">Body Mist</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Milestone</p>
+        <h3 class="product-name">My Favorite Blue Eclat</h3>
+        <div class="product-footer">
+          <span class="product-price">R120</span>
+          <button class="add-btn" onclick="enquire('My Favorite Blue Eclat Body Mist by Milestone')">💬</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up" data-category="other">
+      <div class="product-img-wrap">
+        <img src="Dolores.png" alt="Dolores Pour Femme">
+        <span class="product-badge-tag">EDP</span>
+      </div>
+      <div class="product-info">
+        <p class="product-brand">Fragrance</p>
+        <h3 class="product-name">Dolores Pour Femme</h3>
+        <div class="product-footer">
+          <span class="product-price">R400</span>
+          <button class="add-btn" onclick="enquire('Dolores Pour Femme')">💬</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section id="delivery">
+  <div class="delivery-text fade-up">
+    <p class="section-eyebrow">✦ Delivery Info</p>
+    <h2 class="section-title">We Deliver <em>Anywhere</em> in South Africa</h2>
+    <p>Order your favourite Arabian fragrance from the comfort of your home. We carefully package and dispatch your order to any address in South Africa. Just WhatsApp us to place your order.</p>
+  </div>
+  <div class="delivery-cards fade-up">
+    <div class="del-card">
+      <div class="icon">📦</div>
+      <h4>Flat Rate Delivery</h4>
+      <p>One simple price, no matter where in SA</p>
+      <div class="del-price">R100</div>
+    </div>
+    <div class="del-card">
+      <div class="icon">🏪</div>
+      <h4>In-Store Pickup</h4>
+      <p>42 Aiken Street, Portshepstone – Shop 25i, Portson Centre</p>
+    </div>
+    <div class="del-card">
+      <div class="icon">💬</div>
+      <h4>WhatsApp Order</h4>
+      <p>Message us to place your order instantly</p>
+      <div class="del-price" style="font-size:1rem; margin-top:8px;">060 103 3723</div>
+    </div>
+    <div class="del-card">
+      <div class="icon">⚡</div>
+      <h4>Fast & Secure</h4>
+      <p>All parcels packaged with care for safe arrival</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual fade-up">
+    <div class="about-visual-logo">
+      <div class="about-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="about-visual-name">SCENTS</div>
+      <div class="about-visual-sub">LOFT</div>
+    </div>
+    <div class="about-visual-address">
+      📍 42 Aiken Street, Portshepstone<br>
+      Portson Centre, Shop 25i<br>
+      KwaZulu-Natal, South Africa<br><br>
+      📱 060 103 3723<br>
+      📸 @Scents_loft<br>
+      🎵 Scents Loft
+    </div>
+  </div>
+  <div class="about-text fade-up">
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title">Bringing <em>Dubai</em> to Your Doorstep</h2>
+    <p>Scents Loft was born from a passion for the rich, exotic world of Arabian perfumery. We believe that luxury fragrance shouldn't come with a luxury price tag.</p>
+    <p>Based in Portshepstone, KwaZulu-Natal, we stock an exclusive selection of authentic Arabian and Dubai colognes from the most celebrated houses — Zimaya, Lattafa, Afnan, Armaf, Milestone and more.</p>
+    <p>Every fragrance in our collection is 100% authentic, sourced directly to ensure you receive the genuine article at a price that makes sense.</p>
+    <div class="about-social">
+      <a href="https://instagram.com/Scents_loft" target="_blank" class="social-pill">
+        📸 Instagram
+      </a>
+      <a href="https://tiktok.com/@scentsloft" target="_blank" class="social-pill">
+        🎵 TikTok
+      </a>
+      <a href="https://wa.me/27601033723" target="_blank" class="social-pill">
+        💬 WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry">
+  <div class="enquiry-wrap">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="section-title">Let's Find Your <em>Perfect Scent</em></h2>
+    </div>
+
+    <div class="contact-options fade-up">
+      <a href="https://wa.me/27601033723" target="_blank" class="contact-card">
+        <div class="c-icon">💬</div>
+        <h3>WhatsApp Us</h3>
+        <p>Chat directly for orders, stock enquiries, or fragrance recommendations.</p>
+        <span class="c-action">060 103 3723 →</span>
+      </a>
+      <a href="https://instagram.com/Scents_loft" target="_blank" class="contact-card">
+        <div class="c-icon">📸</div>
+        <h3>Instagram</h3>
+        <p>Follow us for new arrivals, deals and behind-the-scenes content.</p>
+        <span class="c-action">@Scents_loft →</span>
+      </a>
+    </div>
+
+    <!-- CHAT BOX -->
+    <div class="chatbox fade-up">
+      <div class="chatbox-header">
+        <div class="chat-avatar">✦</div>
+        <div class="chat-info">
+          <h4>Scents Loft</h4>
+          <p>Usually replies within minutes</p>
+        </div>
+        <div class="online-dot"></div>
+      </div>
+      <div class="chatbox-messages" id="chat-messages">
+        <div class="chat-bubble">
+          Hi! 👋 Welcome to Scents Loft. Looking for a specific fragrance, or need a recommendation? Type your message below and we'll redirect you straight to our WhatsApp!
+        </div>
+      </div>
+      <div class="chatbox-input">
+        <input type="text" id="chat-input" placeholder="Type your message..." onkeypress="handleChatKey(event)">
+        <button class="chat-send" onclick="sendChat()">➤</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="display:flex;gap:5px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:var(--rose);display:block;"></span>
+          <span style="width:9px;height:9px;border-radius:50%;background:var(--rose);display:block;"></span>
+          <span style="width:9px;height:9px;border-radius:50%;background:var(--rose);display:block;"></span>
+        </div>
+        <div>
+          <div class="brand-name">SCENTS</div>
+          <div class="brand-sub">LOFT</div>
+        </div>
+      </div>
+      <p style="margin-top:16px;">Exclusive authentic Arabian & Dubai colognes at affordable prices. Based in Portshepstone, KZN — delivering joy across South Africa.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#collection">Our Collection</a></li>
+        <li><a href="#delivery">Delivery Info</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#enquiry">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/27601033723">📱 060 103 3723</a></li>
+        <li><a href="https://instagram.com/Scents_loft">📸 @Scents_loft</a></li>
+        <li><a href="#">🎵 Scents Loft (TikTok)</a></li>
+        <li><a href="#">📍 Portson Centre, Shop 25i</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Scents Loft. All rights reserved.</p>
+    <p>Made with ♥ in KwaZulu-Natal</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/27601033723" target="_blank" class="wa-fab" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.product-card').forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Chat
+  function sendChat() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+    const waUrl = `https://wa.me/27601033723?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, '_blank');
+    input.value = '';
+    const messages = document.getElementById('chat-messages');
+    const reply = document.createElement('div');
+    reply.style.cssText = 'text-align:right; margin-top:12px;';
+    reply.innerHTML = `<span style="background:var(--rose);color:white;border-radius:12px 12px 2px 12px;padding:10px 16px;font-size:0.84px;display:inline-block;font-size:0.84rem;">${msg}</span>`;
+    messages.appendChild(reply);
+    setTimeout(() => {
+      const auto = document.createElement('div');
+      auto.style.marginTop = '10px';
+      auto.innerHTML = `<div class="chat-bubble">Redirecting you to WhatsApp now... 💬</div>`;
+      messages.appendChild(auto);
+    }, 500);
+  }
+
+  function handleChatKey(e) {
+    if (e.key === 'Enter') sendChat();
+  }
+
+  function enquire(product) {
+    const msg = `Hi Scents Loft! I'm interested in: ${product}. Can you give me more info?`;
+    window.open(`https://wa.me/27601033723?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+</script>
+</body>
+</html>
